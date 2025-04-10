@@ -3,29 +3,9 @@
 {% block content %}
 <ul class="list-group">
     <li class="list-group-item">
-    Вы на главной странице, этот сайт посвящён вселенной Portal.<br>
+        Вы на главной странице, этот сайт посвящён вселенной Portal.<br>
     </li>
-  <li class="list-group-item">
-    <div class="container">
-        <ul class="nav nav-pills">
-        {% for item in menuWheatley %}
-            <li class="nav-item">
-                <a class="btn btn-{{item.btn}}" href="{{item.url}}">{{item.title}}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
-  </li>
-  <li class="list-group-item">
-    <div class="container">
-        <ul class="nav nav-pills">
-        {% for item in menuGLaDOS %}
-            <li class="nav-item">
-                <a class="btn btn-{{item.btn}}" href="{{item.url}}">{{item.title}}</a>
-            </li>
-        {% endfor %}
-        </ul>
-    </div>
-  </li>
+    {% include "_menu_item.twig" with {menu: menuWheatley} %}
+    {% include "_menu_item.twig" with {menu: menuGLaDOS} %}
 </ul>
 {% endblock %}

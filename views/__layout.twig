@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% import "_macros.twig" as macros %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,9 +20,7 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav">
                         {% for item in nav %}
-                            <li class="nav-item">
-                                <a href="{{ item.url }}" class="nav-link {{ title == item.title ? 'active' }}" {{title == item.title ? 'aria-current="page"'}}>{{item.title}}</a>
-                            </li>
+                            {{ macros.mainnav(item.title, item.url, title == item.title) }}
                         {% endfor %}
                     </ul>
                 </div>

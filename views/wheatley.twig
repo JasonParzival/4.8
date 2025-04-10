@@ -1,16 +1,13 @@
 {% extends "__layout.twig" %}
+{% import "_macros.twig" as macros %}
 
 {% block content %}
-<h1>Уитли</h1>
+<h1>{{ title }}</h1>
 
 <div class="container">
         <ul class="nav nav-pills">
         {% for item in newnav %}
-            <li class="nav-item">
-                <a class="nav-link {{ temp == item.title ? 'active' }}" href="/wheatley/{{item.url}}">
-                    {{item.title}}
-                </a>
-            </li>
+            {{ macros.nav(item.title, "/wheatley/" ~ item.url, temp == item.title) }}
         {% endfor %}
         </ul>
 </div>
